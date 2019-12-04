@@ -1,0 +1,159 @@
+/* *************************************
+ Homework3
+ Lifang Yan
+ 10-21-19
+ *********************/
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <array>
+
+#include "readFile.cpp"
+#include "familyMatrix.hpp"
+
+using std::endl;
+using std::cout;
+using std::cin;
+using std::string;
+using std::ifstream;
+using std::ofstream;
+
+
+int mian(int argc, const char *argv[]){
+    readNumbers();
+    
+ /*int max(int a, int b) { return (a > b) ? a:b; }
+
+ int maxProfit(int tests, int numOfItems, int P[], int M[], int F, int weight[]);
+
+ int main(int argc, const char *argv[]){
+
+    string filename;
+
+    ifstream ifs;
+     ofstream ofs;
+    
+    //open file
+    ifs.open("shopping.txt");
+
+    if(ifs){
+        cout <<"File open successfully!\n";
+    }
+    else{
+        cout <<"Please enter a filename: ";
+        cin >> filename;
+        ifs.open(filename);
+    }
+
+
+     int testCase;
+     //read first number, which is the total test cases
+     ifs >> testCase;
+
+     //within each test case, the first number is item number  item[itemNumber][price][weight]
+     //then will have one line for each item with weight and price of that item
+     //next number will be number of family member
+     //then will be maximum weight can be carried for each family member
+     ofs.open("results.txt", std::fstream::app);
+     for(int i =0; i < testCase; i++){
+        int numOfItems;
+        ifs >> numOfItems;
+
+        //int item[numOfItems][2];
+        int P[numOfItems];
+        int M[numOfItems];
+
+        for(int n = 0; n < numOfItems; n++){
+             ifs >> P[n];
+             ifs >> M[n];
+        }
+
+        int F;
+        ifs >> F;
+        int weight[F];
+         for(int fi = 0; fi < F; fi++){
+            ifs>> weight[fi];
+        }
+
+       // maxProfit(i, numOfItems, P, M , F , weight);
+       
+    }
+    
+     ifs.close();*/
+
+     return  0;
+
+
+}
+
+ /*int maxProfit(int tests, int numOfItems, int P[], int M[], int F, int weight[]){
+
+     
+     
+     //define a 2d array to store the items each family member can carry 
+     int familyMatrix[F][numOfItems];
+
+     int k =0;
+     for(int m = 0; m < F; m++){
+         for(int n = 0; n < numOfItems; n++){
+             if(weight[m] >= M[n]){
+                 familyMatrix[m][n] = M[n];
+                 k++;
+             }
+             else{
+                 familyMatrix[m][n] = 0 ;
+             }
+         }
+     }
+     ofstream ofs;
+    ofs.open("results.txt", std::fstream::app);
+     
+    ofs << "Test Case " << tests + 1 << endl;
+
+    int totalValue = 0;
+    if(numOfItems == 0 || F == 0)
+     {
+         totalValue = 0;
+     }
+
+    if(k == 0){
+        ofs << "Total Price " << familyMatrix[F-1][numOfItems-1] << endl;
+        //output all possible items each family membe able to carry
+    }
+    else{
+            for(int m = 0; m < F; m++){
+                familyMatrix[m][0] = P[0];
+            }
+
+            for(int i = 1; i < F; i++){
+                for(int j = 0; j < numOfItems; j++){
+                    familyMatrix[i][j] = max(familyMatrix[i-1][j], maxProfit(tests, numOfItems, P, M, F, weight) + P[j]);
+            }
+        }
+    }
+    
+    ofs << "Member Items: " << endl;
+    
+   
+
+    for(int i = 0; i < F; i++){
+         ofs << i + 1 << ": ";
+         for(int j = 0; j < numOfItems; j++){
+             if(familyMatrix[i][j] != 0){
+                ofs << j+1 << " ";
+             }
+         }
+         ofs << endl;
+    }
+
+   
+    
+    
+        
+     
+     ofs.close();
+     
+     return totalValue;
+     
+ }*/
